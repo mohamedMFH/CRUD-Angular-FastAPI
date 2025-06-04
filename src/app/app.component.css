@@ -1,0 +1,49 @@
+  .user-list {
+    list-style: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+  }
+  .user-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+    background-color: #f9f9f9;
+    transition: background-color 0.3s ease;
+  }
+  .user-item:hover {
+    background-color: #e1f0ff;
+  }
+  .user-index {
+    width: 30px;
+    font-weight: bold;
+    color: #007bff;
+  }
+  .user-name {
+    flex-grow: 1;
+    margin-left: 10px;
+    font-weight: 600;
+  }
+  .user-email {
+    color: #555;
+    font-style: italic;
+    white-space: nowrap;
+  }
+
+  table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}

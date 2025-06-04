@@ -1,0 +1,22 @@
+<!-- Botón que ejecuta la función getAllUsers() al hacer clic, para cargar la lista de usuarios -->
+<button (click)="getAllUsers()">show all users</button>
+<button type="button" (click)="logout()">Logout</button>
+
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>lastname</th>
+    <th>email</th>
+  </tr>
+  
+<!-- Bucle que recorre la lista 'listUsers' para mostrar cada usuario -->
+@for (user of listUsers; track $index; let i = $index) {
+
+  <tr>
+    <td class="user-name">{{ user.us_name }}</td>
+    <td class="user-lastname">{{ user.us_lastname }}</td>
+    <td class="user-email">{{ user.us_email }}</td>
+  </tr>
+}
+</table>
