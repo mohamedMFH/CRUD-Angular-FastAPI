@@ -1,13 +1,13 @@
 <!-- Botón que ejecuta la función getAllUsers() al hacer clic, para cargar la lista de usuarios -->
-<button (click)="getAllUsers()">show all users</button>
+<!-- <button (click)="getAllUsers()">show all users</button> -->
 <button type="button" (click)="logout()">Logout</button>
-
 
 <table>
   <tr>
     <th>Name</th>
     <th>lastname</th>
     <th>email</th>
+    <th>Actions</th>
   </tr>
   
 <!-- Bucle que recorre la lista 'listUsers' para mostrar cada usuario -->
@@ -17,6 +17,31 @@
     <td class="user-name">{{ user.us_name }}</td>
     <td class="user-lastname">{{ user.us_lastname }}</td>
     <td class="user-email">{{ user.us_email }}</td>
+    <td>
+    <button type="button" (click)="deleteUser(user.us_id)">Delete</button>
+    <button type="button" (click)="EditUser(user.us_id)">Update</button>
+  </td>
   </tr>
+
 }
 </table>
+
+<form [formGroup]="form">
+  <p>Bienvenido al Formulario reactivo</p>
+  <div class="form_fild">
+    <label for="name">Name</label>
+    <input type="text" id="name" placeholder="name" formControlName="us_name">
+  </div>
+  <div class="form_fild">
+    <label for="lastname">Last Name</label>
+    <input type="text" id="lastname" placeholder="Last name" formControlName="us_lastname">
+  </div>
+  <div class="form_fild">
+    <label for="email">email</label>
+    <input type="email" id="email" placeholder="email" formControlName="us_email">
+  </div>
+  <button class="btn-s" (click)="handleSubmit()">Submit</button>
+  <button class="btn-s" (click)="UpdateUser()">Update</button>
+</form>
+
+<pre>{{form.value | json}}</pre>  
